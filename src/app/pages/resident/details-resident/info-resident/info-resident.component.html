@@ -1,0 +1,24 @@
+<nb-card>
+  <!-- <nb-card-header>
+    <h2>Informations du résident</h2>
+  </nb-card-header> -->
+
+  <nb-card-body>
+    <div class="resident-container">
+
+      <!-- Photo -->
+      <div class="photo-container">
+        <img [src]="resident.profilePhotoPath" alt="Photo du résident" class="resident-photo" />
+      </div>
+
+      <!-- Informations en colonnes -->
+      <div class="info-columns">
+        <div class="form-group" *ngFor="let info of residentInfoList">
+          <label>{{ info.label }}</label>
+          <div>{{ info.value }}</div>
+        </div>
+      </div>
+      
+    </div>
+  </nb-card-body>
+</nb-card>

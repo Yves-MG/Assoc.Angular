@@ -1,0 +1,44 @@
+.resident-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.photo-container {
+  text-align: center;
+
+  .resident-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3366ff;
+  }
+}
+
+.info-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.form-group {
+  background: #f7f9fc;
+  border: 1px solid #e4e9f2;
+  padding: 1rem;
+  border-radius: 8px;
+
+  label {
+    display: block;
+    font-weight: 600;
+    color: #1a2138;
+    margin-bottom: 0.25rem;
+  }
+
+  div {
+    color: #596273;
+    font-size: 0.95rem;
+  }
+}

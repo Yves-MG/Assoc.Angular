@@ -9,11 +9,12 @@ import { FormResidentComponent } from './form-resident/form-resident.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { DetailsResidentComponent } from './details-resident/details-resident.component';
+import { InfoResidentComponent } from './details-resident/info-resident/info-resident.component';
 
 
 
 @NgModule({
-  declarations: [ResidentComponent, ResidentTableComponent, FormResidentComponent, DetailsResidentComponent],
+  declarations: [ResidentComponent, ResidentTableComponent, FormResidentComponent, DetailsResidentComponent, InfoResidentComponent],
   imports: [
     CommonModule,
     NbCardModule,
