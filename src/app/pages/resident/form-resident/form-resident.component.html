@@ -1,0 +1,167 @@
+<nb-card>
+    <nb-card-header>Ajout de nouveaux résident</nb-card-header>
+    <nb-card-body>
+        <div class="row">
+            <div class="col-sm-6">
+
+                <div class="demo-items" style="display: flex; gap: 1rem;">
+                    <nb-radio-group [(value)]="genre" class="d-flex" name="genre">
+                    <nb-radio [value]="'Feminin'">Feminin</nb-radio>
+                    <nb-radio [value]="'Masculin'">Masculin</nb-radio>
+                    </nb-radio-group>
+                </div>
+                <div class="form-group">
+                    <label for="inputNationality" class="label">Nationalité</label>
+                    <nb-select fullWidth [(selected)]="selectedNationality" placeholder="Sélectionner...">
+                      <nb-option *ngFor="let nationality of nationalities" [value]="nationality">
+                        {{ nationality }}
+                      </nb-option>
+                    </nb-select>
+                  </div>
+                <div class="form-group">
+                    <label for="inputFirstName" class="label">First Name</label>
+                    <input type="text" nbInput fullWidth id="inputFirstName" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <label for="inputLastName" class="label">Last Name</label>
+                    <input type="text" nbInput fullWidth id="inputLastName" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <label for="inputPhone" class="label">Phone</label>
+                    <input
+                    type="tel"
+                    id="inputPhone"
+                    placeholder="+261 34 12 345 67"
+                    nbInput
+                    fullWidth
+                    pattern="^\+261\d{9}$"
+                    class="form-control"
+                  />
+                  
+                </div>
+              
+                <div class="form-group">
+                  <label for="inputEmail" class="label">Email</label>
+                  <input type="email" nbInput fullWidth id="inputEmail" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <label for="inputotherInfo" class="label">Autres informations</label>
+                  <textarea rows="5" nbInput fullWidth shape="round"  placeholder="Autres Informations"></textarea>
+                </div>
+             </div>   
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="inputAddress" class="label">Langue: </label>
+                <input type="text" nbInput fullWidth id="inputAddress" placeholder="Français, Anglais,...">
+              </div>
+              <div class="row">
+                <div class="form-group col-6 d-flex flex-column">
+                  <label for="inputBirthDate" class="label col-form-label mb-2">Date de Naissance :</label>
+                  <div class="d-flex align-items-center position-relative">
+                    <input
+                    nbInput
+                    placeholder="Choisissez une date"
+                    [nbDatepicker]="datepicker"
+                    (dateChange)="onDateOfBirthChange($event)"
+                    id="inputBirthDate"
+                    />
+                    <nb-datepicker #datepicker></nb-datepicker>
+                    <nb-icon icon="calendar-outline" class="me-2"></nb-icon>
+                  </div>
+                </div>
+              
+                <div class="form-group col-6 d-flex flex-column">
+                  <label class="label col-form-label mb-2" for="maritalStatus">Statut matrimonial :</label>
+                  <nb-select
+                    id="maritalStatus"
+                    placeholder="Sélectionnez le statut"
+                    [(selected)]="maritalStatus"
+                    (selectedChange)="onMaritalStatusChange($event)">
+                    <nb-option value="celibataire">Célibataire</nb-option>
+                    <nb-option value="marie">Marié(e)</nb-option>
+                  </nb-select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-6 d-flex flex-column">
+                  <label for="inputDaysBegin" class="label col-form-label mb-2">Jour d'arrivé :</label>
+                  <div class="d-flex align-items-center position-relative">
+                    <input
+                    nbInput
+                    placeholder="Choisissez une date"
+                    [nbDatepicker]="datepicker"
+                    (dateChange)="onDateOfDayBeginChange($event)"
+                    id="inputDayBegin"
+                    />
+                    <nb-datepicker #datepicker></nb-datepicker>
+                    <nb-icon icon="calendar-outline" class="me-2"></nb-icon>
+                  </div>
+                </div>
+
+                <div class="form-group d-flex flex-column col-6">
+                  <label class="label col-form-label mb-2" for="status">Statuts :</label>
+                  <nb-select
+                    id="status"
+                    placeholder="Sélectionnez un statuts"
+                    [(selected)]="selectedStatusResident"
+                    (selectedChange)="onStatusChange($event)"
+                    >
+                    <nb-option *ngFor="let status of statuses" [value]="status.value">
+                      {{ status.label }}
+                    </nb-option>
+                  </nb-select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group d-flex flex-column col-6">
+                  <label class="label col-form-label mb-2" for="status">Statut professionnel :</label>
+                  <nb-select
+                    id="statusProfessionnel"
+                    placeholder="Sélectionnez un statuts"
+                    [(selected)]="statusProfessionnel"
+                    (selectedChange)="onStatusProfessionelChange($event)"
+                    >
+                    <nb-option *ngFor="let status of statusPro" [value]="status.value">
+                      {{ status.label }}
+                    </nb-option>
+                  </nb-select>
+                </div>
+                <div class="form-group d-flex flex-column col-6">
+                  <label class="label col-form-label mb-2" for="status">Hébergé :</label>
+                  <div class="demo-items" style="display: flex; gap: 1rem;">
+                    <nb-radio-group [(value)]="radioGroupValue" class="d-flex" name="heberge">
+                    <nb-radio [value]="'This is value 1'">Oui</nb-radio>
+                    <nb-radio [value]="'This is value 2'">Non</nb-radio>
+                    </nb-radio-group>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group d-flex flex-column col-6">
+                  <label class="label col-form-label mb-2" for="status">Studios  :</label>
+                  <nb-select
+                    id="selectedStrudios"
+                    placeholder="Sélectionnez un statuts"
+                    [(selected)]="selectedStrudios"
+                    (selectedChange)="onStudioProfessionelChange($event)"
+                    >
+                    <nb-option *ngFor="let studio of strudios" [value]="studio.name">
+                      {{ studio.name }}
+                    </nb-option>
+                  </nb-select>
+                </div>
+
+              </div>
+            
+            </div>
+            <!-- <button outline type="submit" status="primary" nbButton>Continuer</button> -->
+        </div>
+        <div class="row mr-2" style="display: flex; justify-content: flex-end;">
+          <button outline type="submit" status="primary" nbButton>Continuer</button>
+        </div>
+        
+
+    </nb-card-body>
+  </nb-card>

@@ -1,0 +1,15 @@
+<nb-card>
+    <nb-card-header>
+        <div class="d-flex justify-content-between align-items-center w-100">
+            <span>Listes</span>
+            <button nbButton status="primary" (click)="onAdd()">
+              Ajouter
+            </button>
+          </div>
+    </nb-card-header>
+    <nb-card-body>
+      <ng2-smart-table [settings]="settings" [source]="source">
+      </ng2-smart-table>
+    </nb-card-body>
+</nb-card>
+  
