@@ -1,0 +1,44 @@
+<div class="dossier-container">
+  <div class="dossier-section">
+    <h3>Dossier</h3>
+    <ul>
+      <li><strong>Référence dossier :</strong> {{ dossier.reference }}</li>
+      <li><strong>Statut :</strong> <span class="badge badge-success">{{ dossier.statut }}</span></li>
+      <li><strong>Type de domiciliation :</strong> {{ dossier.type }}</li>
+      <li><strong>Échéance :</strong> {{ dossier.echeance }}</li>
+      <li><strong>Dernier passage :</strong> {{ dossier.dernierPassage }}</li>
+      <li><strong>Première domiciliation :</strong> {{ dossier.premiereDomiciliation }}</li>
+      <li><strong>Ayants droit :</strong> {{ dossier.ayantDroit }} ayant droit</li>
+      <li><strong>Référent du dossier :</strong> {{ dossier.referent }}</li>
+    </ul>
+    <a href="#" class="link">Voir le dossier complet</a>
+  </div>
+
+  <div class="courrier-section">
+    <h3>Courrier en attente</h3>
+    <ul>
+      <li>📩 {{ courrierAttente.courriers }} courriers</li>
+      <li>📦 {{ courrierAttente.colis }} colis</li>
+      <li>📝 {{ courrierAttente.avisPassage }} avis de passage</li>
+    </ul>
+    <!-- <div class="actions">
+      <button>👣 Ajouter un passage</button>
+      <button>📞 Ajouter un appel téléphonique</button>
+      <button>📬 Ajouter du courrier</button>
+    </div> -->
+  </div>
+
+  <div class="historique-section">
+    <h3>Historique des courriers</h3>
+    <ul>
+      <li *ngFor="let item of dossier.historique">
+        📧 {{ item.date }} — {{ item.contenu }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="notes-section">
+    <h3>Notes</h3>
+    <p>Aucune note enregistrée actuellement</p>
+  </div>
+</div>

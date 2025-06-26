@@ -10,14 +10,17 @@
         <!-- <div class="col-12">
             <nb-card size="small"> -->
               <nb-tabset fullWidth>
+                <nb-tab tabTitle="Vue d'ensemble">
+                <vue-ensemble-resident ></vue-ensemble-resident> 
+                </nb-tab>
                 <nb-tab tabTitle="Informations">
                 <info-resident [resident]="resident" ></info-resident> 
                 </nb-tab>
                 <nb-tab tabTitle="Suivi">
-                  <span>Content #2</span>
+                  <span>No Data</span>
                 </nb-tab>
                 <nb-tab tabTitle="Document">
-                  <span>Content #3</span>
+                  <dossiers-resident></dossiers-resident>
                 </nb-tab>
               </nb-tabset>
             <!-- </nb-card>

@@ -1,0 +1,31 @@
+<div class="document-table-container">
+  <div class="table-actions">
+    <button class="btn-primary">Télécharger l’attestation de demande</button>
+    <button class="btn-primary">Télécharger le CERFA</button>
+  </div>
+
+  <table class="document-table">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Nom du document</th>
+        <th>Ajouté par</th>
+        <th>Ajouté le</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doc of documents">
+        <td>
+          <img src="../../../../../assets/images/excel.png" alt="Word" class="icon" />
+        </td>
+        <td>{{ doc.name }}</td>
+        <td>{{ doc.addedBy }}</td>
+        <td>{{ doc.addedDate }}</td>
+        <td>
+          <a [href]="doc.downloadLink" class="btn-secondary" download>Télécharger</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

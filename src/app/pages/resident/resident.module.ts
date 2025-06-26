@@ -10,11 +10,13 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { DetailsResidentComponent } from './details-resident/details-resident.component';
 import { InfoResidentComponent } from './details-resident/info-resident/info-resident.component';
+import { DossiersResidentComponent } from './details-resident/dossiers-resident/dossiers-resident.component';
+import { VueEnsembleResidentComponent } from './details-resident/vue-ensemble-resident/vue-ensemble-resident.component';
 
 
 
 @NgModule({
-  declarations: [ResidentComponent, ResidentTableComponent, FormResidentComponent, DetailsResidentComponent, InfoResidentComponent],
+  declarations: [ResidentComponent, ResidentTableComponent, FormResidentComponent, DetailsResidentComponent, InfoResidentComponent, DossiersResidentComponent, VueEnsembleResidentComponent],
   imports: [
     CommonModule,
     NbCardModule,
